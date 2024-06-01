@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="TD3.css">
+    <script type="text/javascript"  src="TD3.js"></script>
+    <script type="text/javascript"  src="demanderage.js"></script>
+    <script type="text/javascript"  src="effacer.js"></script>
+    <script type="text/javascript"  src="Rechercher.js"></script>
+    <title>Formulaire de Réservation</title>
+</head>
+<body>
+    <header>
+        <h1>BOOKING HOTEL</h1>
+        <h3>Indiquez vos dates de reservation - Toute annulation doit se faire 48h avant</h3>
+    </header>
+    <form id="reservationfrom">
+        <table class="table1">
+            <tr>
+            <td colspan="2">
+                <img src="https://png.pngtree.com/png-vector/20190521/ourmid/pngtree-hotel-icon-for-personal-and-commercial-use-png-image_1044892.jpg" alt="Logo de l'hôtel" width="">
+            </td>
+            <td colspan="2" class="fr">FRANCE-ETRANGER:</td>
+        </tr>
+        <tr>
+            <td colspan="2">Lieu de séjour:</td>
+            <td colspan="2"><input type="text" name="lieu_sejour"required placeholder="Lieu de séjour"></td>
+        </tr>
+        <tr>
+            <td colspan="2">Arrivée:<input type="date" name="date_arrivee"></td>
+            <td colspan="2">Départ:<input type="date" name="date_depart"></td>
+        
+        </tr>
+        <tr>
+            <td>Adulte</td>
+            <td><input type="number" name="adulte" id="adulte" value="0" readonly></td>
+            <td><button type="button" onclick="augmenter('adulte')">+</button></td>
+            <td><button type="button" onclick="diminuer('adulte')">-</button></td>
+        </tr>
+        <tr>
+            <td><label for="nombreEnfants">Enfant</label></td>
+            <td><input type="number" name="Enfant" id="nombreEnfants" value="0"></td>
+            <td><button type="button" onclick="augmenter1('nombreEnfants')" >+</button></td>
+            <td><button type="button" onclick="diminuer1('nombreEnfants')">-</button></td>
+        </tr>
+        <tr>
+            <td colspan="4"><div id="formAges" style="margin-top: 20px;">
+                <div id="resultats" style="margin-top: 20px;"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Chambre</td>
+            <td><input type="number" name="Chambre" id="Chambre" value="0" readonly></td>
+            <td><button type="button" onclick="augmenter('Chambre')">+</button></td>
+            <td><button type="button" onclick="diminuer('Chambre')">-</button></td>
+        </tr>
+        <tr>
+            <td colspan="4"><button type="submit" onclick="rechercher(event)">Rechercher</button></td>
+        </tr>
+        <tr>
+            <td colspan="4"><button type="submit"onclick="effacerFormulaire()">Effacer</button></td>
+        </tr>
+        <tr>
+            <td colspan="4"> <input type="checkbox" id="travail">Je voyage pour travailler </td>
+        </tr>
+        </table>
+   
+   
+        <table class="table2">
+           <tr> <td><h1 id="Confirmation">Confirmation<br> reservation</h1></td></tr>
+            <tr>
+                <td>Nombre(s) d'adulte(s): <div id="nombreAdulte"></div> </td>
+            </tr>
+            <tr>
+                <td>Nombre(s) d'Enfant(s): <div id="Enfants"></div> </td>
+            </tr>
+            <tr>
+                <td>Nombre(s) de Chambre(s):<div id="nombreChambre"></div> </td>
+            </tr>
+            <tr>
+                <td>Voyage pour le travail : <div id="nombretravail"></div> </td>
+            </tr>
+        </table>
+    </form>
+        <footer>Indiquez vos dates de reservation - Toute annulation doit se faire 48h avant</footer>
+
+
+</body>
+</html>
+
